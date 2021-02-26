@@ -19,10 +19,12 @@ void push(StackPtr s, char value){
 char pop(StackPtr s){
   NodePtr t =s->top;
   char value;
+  if(s->top != NULL){
   value=t->data;
   s->top=t->nextPtr;
   free(t);
   return value;
+  }
 }
 void pop_all(StackPtr s){
   NodePtr t =s->top;
@@ -32,6 +34,8 @@ void pop_all(StackPtr s){
     s->top=t->nextPtr;
     printf("Popping %c\n",value);
     free(t);
+    t = s->top;
+    s->size -= 1;
   }
 }
 
