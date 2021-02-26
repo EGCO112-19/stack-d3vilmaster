@@ -40,6 +40,5 @@ int main(int argc, char **argv){
      }
      else{printf("The parentheses match successfull in %s\n",argv[i]);}
      check = 0;
-   return 0;
-}
+}return 0;
 }
